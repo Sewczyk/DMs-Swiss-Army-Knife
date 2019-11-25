@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using CipherMachine.CustomForms;
+
 
 namespace CipherMachine
 {
@@ -96,8 +96,7 @@ namespace CipherMachine
         {
             if (isChanged)
             {
-                UnsavedChangesForm changesForm = new UnsavedChangesForm();
-                changesForm.Show();
+
             }
             else
             {
