@@ -50,15 +50,20 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripComboBoxFonts = new System.Windows.Forms.ToolStripComboBox();
             this.comboBoxFontsSize = new System.Windows.Forms.ToolStripComboBox();
+            this.groupBoxCipherManagement = new System.Windows.Forms.GroupBox();
+            this.buttonAddToCipheringOrder = new System.Windows.Forms.Button();
+            this.listBoxCipheringOrder = new System.Windows.Forms.ListBox();
+            this.listBoxAvilableCiphers = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
+            this.groupBoxCipherManagement.SuspendLayout();
             this.SuspendLayout();
             // 
             // textSource
             // 
-            this.textSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textSource.Dock = System.Windows.Forms.DockStyle.Left;
             this.textSource.Location = new System.Drawing.Point(0, 27);
             this.textSource.Name = "textSource";
-            this.textSource.Size = new System.Drawing.Size(843, 423);
+            this.textSource.Size = new System.Drawing.Size(627, 423);
             this.textSource.TabIndex = 0;
             this.textSource.Text = "";
             this.textSource.TextChanged += new System.EventHandler(this.textSource_TextChanged);
@@ -250,6 +255,45 @@
             this.comboBoxFontsSize.Size = new System.Drawing.Size(121, 23);
             this.comboBoxFontsSize.SelectedIndexChanged += new System.EventHandler(this.comboBoxFontsSize_SelectedIndexChanged);
             // 
+            // groupBoxCipherManagement
+            // 
+            this.groupBoxCipherManagement.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.groupBoxCipherManagement.Controls.Add(this.buttonAddToCipheringOrder);
+            this.groupBoxCipherManagement.Controls.Add(this.listBoxCipheringOrder);
+            this.groupBoxCipherManagement.Controls.Add(this.listBoxAvilableCiphers);
+            this.groupBoxCipherManagement.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBoxCipherManagement.Location = new System.Drawing.Point(633, 27);
+            this.groupBoxCipherManagement.Name = "groupBoxCipherManagement";
+            this.groupBoxCipherManagement.Size = new System.Drawing.Size(210, 423);
+            this.groupBoxCipherManagement.TabIndex = 4;
+            this.groupBoxCipherManagement.TabStop = false;
+            // 
+            // buttonAddToCipheringOrder
+            // 
+            this.buttonAddToCipheringOrder.Location = new System.Drawing.Point(62, 198);
+            this.buttonAddToCipheringOrder.Name = "buttonAddToCipheringOrder";
+            this.buttonAddToCipheringOrder.Size = new System.Drawing.Size(85, 32);
+            this.buttonAddToCipheringOrder.TabIndex = 2;
+            this.buttonAddToCipheringOrder.Text = "Dodaj";
+            this.buttonAddToCipheringOrder.UseVisualStyleBackColor = true;
+            this.buttonAddToCipheringOrder.Click += new System.EventHandler(this.buttonAddToCipheringOrder_Click);
+            // 
+            // listBoxCipheringOrder
+            // 
+            this.listBoxCipheringOrder.FormattingEnabled = true;
+            this.listBoxCipheringOrder.Location = new System.Drawing.Point(6, 238);
+            this.listBoxCipheringOrder.Name = "listBoxCipheringOrder";
+            this.listBoxCipheringOrder.Size = new System.Drawing.Size(198, 173);
+            this.listBoxCipheringOrder.TabIndex = 1;
+            // 
+            // listBoxAvilableCiphers
+            // 
+            this.listBoxAvilableCiphers.FormattingEnabled = true;
+            this.listBoxAvilableCiphers.Location = new System.Drawing.Point(6, 19);
+            this.listBoxAvilableCiphers.Name = "listBoxAvilableCiphers";
+            this.listBoxAvilableCiphers.Size = new System.Drawing.Size(198, 173);
+            this.listBoxAvilableCiphers.TabIndex = 0;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +301,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(843, 450);
             this.Controls.Add(this.textSource);
+            this.Controls.Add(this.groupBoxCipherManagement);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
@@ -264,6 +309,7 @@
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBoxCipherManagement.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,6 +338,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripComboBox comboBoxFontsSize;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBoxFonts;
+        private System.Windows.Forms.GroupBox groupBoxCipherManagement;
+        private System.Windows.Forms.Button buttonAddToCipheringOrder;
+        private System.Windows.Forms.ListBox listBoxCipheringOrder;
+        private System.Windows.Forms.ListBox listBoxAvilableCiphers;
     }
 }
 

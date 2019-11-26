@@ -3,17 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ControlAndData.Ciphers;
-using static ControlAndData.Miscellaneous.Constants;
+using ControlAndData.Miscellaneous;
 
 namespace ControlAndData
 {
     public class Controller
     {
-        List<ICipher> AllCiphers { get; }
-        
+        public List<string> AllCiphers { get; private set; }
+        List<ICipher> CipheringOrder { get; set; }
+        private Constants Constants = new Constants();
         public Controller()
         {
-            AllCiphers.Add(new CaesarCipher());
+            AllCiphers = new List<string>();
+            CipheringOrder = new List<ICipher>();
+            foreach (string obj in Constants.ListOfCiphers)
+            {
+                AllCiphers.Add(obj);
+            }
+        }
+
+        private void InitializeCipherNames()
+        {
+            
         }
         
     }

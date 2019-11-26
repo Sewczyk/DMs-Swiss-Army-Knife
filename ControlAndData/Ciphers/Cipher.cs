@@ -5,11 +5,7 @@ using System.Text;
 
 namespace ControlAndData.Ciphers
 {
-    interface ICipher
+    class Cipher
     {
-        string Name { get; }
-        void RunLogic();
-        void TestMethod();
-        
     }
 }

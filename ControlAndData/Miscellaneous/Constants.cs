@@ -7,22 +7,28 @@ namespace ControlAndData.Miscellaneous
 {
     public class Constants
     {
-        public static string CaesarCipherName { get; private set; }
-        public static string NihilistCipherName { get; private set; }
-        public static string BinaryCipherName { get; private set; }
-        public static string PlayfairCipherName { get; private set; }
+        public string CaesarCipherName { get; private set; }
+        public string NihilistCipherName { get; private set; }
+        public string BinaryTranslation { get; private set; }
+        public string PlayfairCipherName { get; private set; }
+        public string FutharkTranslation { get; private set; }
         static string AlphabetWithPolishLetters;
         public static Dictionary<char, int> LettersToNumbers { get; private set; }
         public static Dictionary<int,char> NumbersToLetters { get; private set; }
+        public List<string> ListOfCiphers { get; private set; }
+        
         public Constants()
         {
 
             CaesarCipherName = "Szyfr Cezara";
             NihilistCipherName = "Szyfr Nihilistów";
-            BinaryCipherName = "Binarnie";
+            BinaryTranslation = "Translacja Binarnie";
             PlayfairCipherName = "Szyfr Playfair'a";
             AlphabetWithPolishLetters = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUVWXYZŹŻaąbcćdeęfghijklłmnńoóprsśtuvwxyzźż";
+            FutharkTranslation = "Translacja do Futhark";
             InitializeDictionaries();
+            InitializeListOfCiphers();
+
             
         }
 
@@ -35,6 +41,16 @@ namespace ControlAndData.Miscellaneous
                 LettersToNumbers.Add(AlphabetWithPolishLetters[i], i);
                 NumbersToLetters.Add(i, AlphabetWithPolishLetters[i]);
             }
+        }
+
+        private void InitializeListOfCiphers()
+        {
+            ListOfCiphers = new List<string>();
+            ListOfCiphers.Add(CaesarCipherName);
+            ListOfCiphers.Add(NihilistCipherName);
+            ListOfCiphers.Add(BinaryTranslation);
+            ListOfCiphers.Add(PlayfairCipherName);
+            ListOfCiphers.Add(FutharkTranslation);
         }
     }
 }

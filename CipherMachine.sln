@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CipherMachine", "CipherMachine\CipherMachine.csproj", "{0CFC690F-B39B-4D86-BCB4-6879A46E497B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CipherMachineUI", "CipherMachine\CipherMachineUI.csproj", "{0CFC690F-B39B-4D86-BCB4-6879A46E497B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlAndData", "ControlAndData\ControlAndData.csproj", "{17447258-B8CD-49D1-A6EF-315F07630A09}"
 EndProject

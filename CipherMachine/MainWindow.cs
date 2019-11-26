@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ControlAndData;
 
 
 namespace CipherMachine
@@ -20,10 +21,12 @@ namespace CipherMachine
         private string globalFont;
         private float globalFontSize = 2;
         private bool isChanged = false;
+        Controller ControllerAndData = new Controller();
 
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            
             foreach (FontFamily font in FontFamily.Families)
             {
                 toolStripComboBoxFonts.Items.Add(font.Name.ToString());
@@ -42,10 +45,16 @@ namespace CipherMachine
                     break;
                 }
             }
-            textSource.SelectionFont = new Font(globalFont, globalFontSize);
-
+            textSource.Font = new Font(globalFont, globalFontSize);
+            
+            foreach(string obj in ControllerAndData.AllCiphers)
+            {
+                listBoxAvilableCiphers.Items.Add(obj);
+            }
         }
+        #region Toolstrip Menu on click Actions
 
+        
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textSource.Clear();
@@ -69,7 +78,7 @@ namespace CipherMachine
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Text files (.txt) | *txt";
+            sfd.Filter = "Text files (.txt) | *.txt";
             sfd.Title = "Zapisz";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -145,6 +154,16 @@ namespace CipherMachine
         {
             isChanged = true;
         }
+        #endregion
 
+        private void buttonAddToCipheringOrder_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private Form FormFactory(Controller _controller)
+        {
+            return null;
+        }
     }
 }
