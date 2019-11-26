@@ -8,6 +8,6 @@ namespace ControlAndData.Ciphers
     interface ICipher
     {
         string Name { get; }
-
+        void RunLogic();
     }
 }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Ciphers\CaesarCipher.cs" />
     <Compile Include="Ciphers\ICipher.cs" />
+    <Compile Include="Ciphers\NihilistCipher.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Miscellaneous\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
