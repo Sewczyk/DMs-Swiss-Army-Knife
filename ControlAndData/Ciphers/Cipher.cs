@@ -13,9 +13,7 @@ namespace ControlAndData.Ciphers
         }
 
         public abstract string Name { get; }
-
         public abstract string OutputToListBox();
-        public abstract void PrepareData();
         public abstract void RunLogic();
     }
 }
