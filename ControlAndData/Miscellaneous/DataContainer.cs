@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ControlAndData.Miscellaneous
 {
-    public class Constants
+    public class DataContainer
     {
         public string CaesarCipherName { get; private set; }
         public string NihilistCipherName { get; private set; }
@@ -17,7 +17,7 @@ namespace ControlAndData.Miscellaneous
         public static Dictionary<int,char> NumbersToLetters { get; private set; }
         public List<string> ListOfCiphers { get; private set; }
         
-        public Constants()
+        public DataContainer()
         {
 
             CaesarCipherName = "Szyfr Cezara";

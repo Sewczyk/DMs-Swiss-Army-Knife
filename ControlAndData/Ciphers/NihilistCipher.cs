@@ -5,9 +5,24 @@ using System.Text;
 
 namespace ControlAndData.Ciphers
 {
-    class NihilistCipher : ICipher
+    class NihilistCipher : Cipher, ICipher
     {
-        public string Name { get; private set; }
+        public string keyword { get; set; }
+
+        public NihilistCipher()
+        {
+            //nonParam
+        }
+
+        public NihilistCipher(string _name, string keyword)
+        {
+
+        }
+
+        public void PrepareData()
+        {
+            
+        }
 
         public void RunLogic()
         {

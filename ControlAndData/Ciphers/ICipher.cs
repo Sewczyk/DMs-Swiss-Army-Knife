@@ -7,9 +7,8 @@ namespace ControlAndData.Ciphers
 {
     interface ICipher
     {
-        string Name { get; }
+        void PrepareData();
         void RunLogic();
-        void TestMethod();
         
     }
 }

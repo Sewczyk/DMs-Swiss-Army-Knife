@@ -5,7 +5,16 @@ using System.Text;
 
 namespace ControlAndData.Ciphers
 {
-    class Cipher
+    public abstract class Cipher
     {
+        public string Name { get; private set; }
+        public Cipher()
+        {
+
+        }
+        public Cipher(string _name)
+        {
+            Name = _name;
+        }
     }
 }

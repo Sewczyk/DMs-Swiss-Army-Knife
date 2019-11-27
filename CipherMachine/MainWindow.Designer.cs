@@ -60,10 +60,10 @@
             // 
             // textSource
             // 
-            this.textSource.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textSource.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textSource.Location = new System.Drawing.Point(0, 27);
             this.textSource.Name = "textSource";
-            this.textSource.Size = new System.Drawing.Size(627, 423);
+            this.textSource.Size = new System.Drawing.Size(633, 423);
             this.textSource.TabIndex = 0;
             this.textSource.Text = "";
             this.textSource.TextChanged += new System.EventHandler(this.textSource_TextChanged);

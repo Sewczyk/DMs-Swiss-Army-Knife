@@ -6,16 +6,15 @@ using System.Text;
 
 namespace ControlAndData.Ciphers
 {
-    class CaesarCipher : ICipher
+    public class CaesarCipher : Cipher, ICipher
     {
-        public string Name { get; private set; }
-        private int Shift;
+        public int Shift { get; private set; }
         public CaesarCipher()
         {
             //do stuff;
         }
 
-        public CaesarCipher(int _shift)
+        public CaesarCipher(string _name, int _shift)
         {
             Shift = _shift;
         }
@@ -23,6 +22,11 @@ namespace ControlAndData.Ciphers
         public void RunLogic()
         {
             //do Stuff
+        }
+
+        public void PrepareData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

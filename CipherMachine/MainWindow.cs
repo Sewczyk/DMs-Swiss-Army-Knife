@@ -158,11 +158,19 @@ namespace CipherMachine
 
         private void buttonAddToCipheringOrder_Click(object sender, EventArgs e)
         {
-            
+            Form cipherParamsWindow = FormFactory(listBoxAvilableCiphers.SelectedItem.ToString());
+            if (cipherParamsWindow != null)
+                cipherParamsWindow.Show();
+            else
+                ControllerAndData.scanCipheringOrder();
+
+
         }
 
-        private Form FormFactory(Controller _controller)
+        private Form FormFactory(string _input)
         {
+            if (_input == ControllerAndData.Constants.NihilistCipherName)
+                return new FormNihilistPlayfair(ControllerAndData, _input);
             return null;
         }
     }
