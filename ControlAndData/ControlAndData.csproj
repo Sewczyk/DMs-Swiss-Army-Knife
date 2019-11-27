@@ -45,6 +45,7 @@
     <Compile Include="Ciphers\NihilistCipher.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Miscellaneous\DataContainer.cs" />
+    <Compile Include="Miscellaneous\Transformations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

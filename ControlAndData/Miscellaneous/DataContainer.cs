@@ -5,34 +5,18 @@ using System.Text;
 
 namespace ControlAndData.Miscellaneous
 {
-    public class DataContainer
+    public static class DataContainer
     {
-        public string CaesarCipherName { get; private set; }
-        public string NihilistCipherName { get; private set; }
-        public string BinaryTranslation { get; private set; }
-        public string PlayfairCipherName { get; private set; }
-        public string FutharkTranslation { get; private set; }
-        static string AlphabetWithPolishLetters;
+        public static string CaesarCipherName = "Szyfr Cezara";
+        public static string NihilistCipherName = "Szyfr Nihilistów";
+        public static string BinaryTranslation = "Translacja Binarnie";
+        public static string PlayfairCipherName = "Szyfr Playfair'a";
+        public static string FutharkTranslation = "Translacja do Futhark";
+        private static string AlphabetWithPolishLetters = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUVWXYZŹŻaąbcćdeęfghijklłmnńoóprsśtuvwxyzźż";
         public static Dictionary<char, int> LettersToNumbers { get; private set; }
         public static Dictionary<int,char> NumbersToLetters { get; private set; }
-        public List<string> ListOfCiphers { get; private set; }
-        
-        public DataContainer()
-        {
 
-            CaesarCipherName = "Szyfr Cezara";
-            NihilistCipherName = "Szyfr Nihilistów";
-            BinaryTranslation = "Translacja Binarnie";
-            PlayfairCipherName = "Szyfr Playfair'a";
-            AlphabetWithPolishLetters = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUVWXYZŹŻaąbcćdeęfghijklłmnńoóprsśtuvwxyzźż";
-            FutharkTranslation = "Translacja do Futhark";
-            InitializeDictionaries();
-            InitializeListOfCiphers();
-
-            
-        }
-
-        private void InitializeDictionaries()
+        private static void InitializeDictionaries()
         {
             LettersToNumbers = new Dictionary<char, int>();
             NumbersToLetters = new Dictionary<int, char>();
@@ -43,14 +27,6 @@ namespace ControlAndData.Miscellaneous
             }
         }
 
-        private void InitializeListOfCiphers()
-        {
-            ListOfCiphers = new List<string>();
-            ListOfCiphers.Add(CaesarCipherName);
-            ListOfCiphers.Add(NihilistCipherName);
-            ListOfCiphers.Add(BinaryTranslation);
-            ListOfCiphers.Add(PlayfairCipherName);
-            ListOfCiphers.Add(FutharkTranslation);
-        }
+
     }
 }

@@ -5,16 +5,17 @@ using System.Text;
 
 namespace ControlAndData.Ciphers
 {
-    public abstract class Cipher
+    public abstract class Cipher : ICipher
     {
-        public string Name { get; private set; }
         public Cipher()
         {
 
         }
-        public Cipher(string _name)
-        {
-            Name = _name;
-        }
+
+        public abstract string Name { get; }
+
+        public abstract string OutputToListBox();
+        public abstract void PrepareData();
+        public abstract void RunLogic();
     }
 }

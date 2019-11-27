@@ -4,36 +4,49 @@ using System.Linq;
 using System.Text;
 using ControlAndData.Ciphers;
 using ControlAndData.Miscellaneous;
+using static ControlAndData.Miscellaneous.DataContainer;
 
 namespace ControlAndData
 {
     public class Controller
     {
+        public bool HasCipheringOrderChanged { get; set; }
+
         public List<string> AllCiphers { get; private set; }
         public List<Cipher> CipheringOrder { get; private set; }
-        public DataContainer Constants { get; }
         public Controller()
         {
-            Constants = new DataContainer();
+            HasCipheringOrderChanged = false;
             AllCiphers = new List<string>();
             CipheringOrder = new List<Cipher>();
             CaesarCipher caesarCipher = new CaesarCipher();
-            foreach (string obj in Constants.ListOfCiphers)
-            {
-                AllCiphers.Add(obj);
-            }
+            InitializeListOfCiphers();
         }
 
 
-        public void CreateNihilistCipherInstance(string _name, string _keyword)
+        public void AddNewNihilistPlayfairInstanceToCipheringOrder(string _name, string _keyword)
         {
             CipheringOrder.Add(new NihilistCipher(_name, _keyword));
-            
+            HasCipheringOrderChanged = true;
+
         }
         
-        public void scanCipheringOrder()
+        public void ScanCipheringOrder()
         {
             Console.WriteLine("Big One");
         }
+        private void InitializeListOfCiphers()
+        {
+            AllCiphers = new List<string>
+            {
+                CaesarCipherName,
+                NihilistCipherName,
+                BinaryTranslation,
+                PlayfairCipherName,
+                FutharkTranslation
+            };
+        }
+
+        
     }
 }

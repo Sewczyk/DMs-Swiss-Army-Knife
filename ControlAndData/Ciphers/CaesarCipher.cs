@@ -6,9 +6,12 @@ using System.Text;
 
 namespace ControlAndData.Ciphers
 {
-    public class CaesarCipher : Cipher, ICipher
+    public class CaesarCipher : Cipher
     {
         public int Shift { get; private set; }
+
+        public override string Name => throw new NotImplementedException();
+
         public CaesarCipher()
         {
             //do stuff;
@@ -19,14 +22,19 @@ namespace ControlAndData.Ciphers
             Shift = _shift;
         }
 
-        public void RunLogic()
-        {
-            //do Stuff
-        }
-
-        public void PrepareData()
+        public override void PrepareData()
         {
             throw new NotImplementedException();
+        }
+
+        public override void RunLogic()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string OutputToListBox()
+        {
+            return Name + "," + Shift.ToString();
         }
     }
 }

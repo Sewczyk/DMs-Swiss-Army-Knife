@@ -2,31 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static ControlAndData.Miscellaneous.DataContainer;
 
 namespace ControlAndData.Ciphers
 {
-    class NihilistCipher : Cipher, ICipher
+    public class NihilistCipher : Cipher
     {
-        public string keyword { get; set; }
 
-        public NihilistCipher()
+        public string Keyword { get; set; }
+
+        public override string Name { get; }
+
+        public override void PrepareData()
         {
-            //nonParam
+            throw new NotImplementedException();
         }
 
-        public NihilistCipher(string _name, string keyword)
+        public override void RunLogic()
         {
-
+            throw new NotImplementedException();
         }
 
-        public void PrepareData()
+        public override string OutputToListBox()
         {
-            
+            return Name + " | " + Keyword;
         }
 
-        public void RunLogic()
+        public NihilistCipher(string _name, string _keyword)
         {
-            //do Stuff
+            Name = _name;
+            Keyword = _keyword;
         }
+
+
     }
 }

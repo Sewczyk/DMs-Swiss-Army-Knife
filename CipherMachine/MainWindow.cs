@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ControlAndData;
+using ControlAndData.Ciphers;
+using static ControlAndData.Miscellaneous.DataContainer;
 
 
 namespace CipherMachine
@@ -51,7 +53,10 @@ namespace CipherMachine
             {
                 listBoxAvilableCiphers.Items.Add(obj);
             }
+            listBoxAvilableCiphers.SelectedIndex = 0;
         }
+
+
         #region Toolstrip Menu on click Actions
 
         
@@ -162,16 +167,29 @@ namespace CipherMachine
             if (cipherParamsWindow != null)
                 cipherParamsWindow.Show();
             else
-                ControllerAndData.scanCipheringOrder();
-
+                return;
 
         }
 
         private Form FormFactory(string _input)
         {
-            if (_input == ControllerAndData.Constants.NihilistCipherName)
-                return new FormNihilistPlayfair(ControllerAndData, _input);
+            if (_input == NihilistCipherName)
+                return new FormNihilistPlayfair(ControllerAndData);
             return null;
+        }
+
+        private void MainWindow_Activated(object sender, EventArgs e)
+        {
+            listBoxCipheringOrder.DataSource = null;
+            foreach (Cipher current in ControllerAndData.CipheringOrder)
+            {
+                listBoxCipheringOrder.Items.Add(current.OutputToListBox());
+            }
+        }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dispose();
         }
     }
 }
