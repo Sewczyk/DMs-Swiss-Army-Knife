@@ -22,11 +22,6 @@ namespace ControlAndData.Ciphers
             Shift = _shift;
         }
 
-        public override void PrepareData()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void RunLogic()
         {
             throw new NotImplementedException();

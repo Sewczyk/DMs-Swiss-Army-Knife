@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ControlAndData.Miscellaneous
 {
-    public static class DataContainer
+    public static class Constants
     {
         public static string CaesarCipherName = "Szyfr Cezara";
         public static string NihilistCipherName = "Szyfr Nihilistów";

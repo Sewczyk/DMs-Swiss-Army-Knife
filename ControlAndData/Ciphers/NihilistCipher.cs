@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using static ControlAndData.Miscellaneous.DataContainer;
+using static ControlAndData.Miscellaneous.Constants;
 
 namespace ControlAndData.Ciphers
 {
     public class NihilistCipher : Cipher
     {
-
         public string Keyword { get; set; }
 
         public override string Name { get; }
 
-        public override void PrepareData()
+
+        public NihilistCipher(string _name, string _keyword)
         {
-            throw new NotImplementedException();
+            Name = _name;
+            Keyword = _keyword;
         }
+
 
         public override void RunLogic()
         {
@@ -27,13 +29,6 @@ namespace ControlAndData.Ciphers
         {
             return Name + " | " + Keyword;
         }
-
-        public NihilistCipher(string _name, string _keyword)
-        {
-            Name = _name;
-            Keyword = _keyword;
-        }
-
 
     }
 }

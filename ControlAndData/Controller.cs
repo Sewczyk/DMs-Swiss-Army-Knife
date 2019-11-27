@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ControlAndData.Ciphers;
 using ControlAndData.Miscellaneous;
-using static ControlAndData.Miscellaneous.DataContainer;
+using static ControlAndData.Miscellaneous.Constants;
 
 namespace ControlAndData
 {
@@ -31,10 +31,6 @@ namespace ControlAndData
 
         }
         
-        public void ScanCipheringOrder()
-        {
-            Console.WriteLine("Big One");
-        }
         private void InitializeListOfCiphers()
         {
             AllCiphers = new List<string>

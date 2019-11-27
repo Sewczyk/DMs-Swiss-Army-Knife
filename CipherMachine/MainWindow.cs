@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ControlAndData;
 using ControlAndData.Ciphers;
-using static ControlAndData.Miscellaneous.DataContainer;
+using static ControlAndData.Miscellaneous.Constants;
 
 
 namespace CipherMachine
