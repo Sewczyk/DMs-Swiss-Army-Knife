@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ControlAndData.Ciphers;
-using ControlAndData.Miscellaneous;
-using static ControlAndData.Miscellaneous.Constants;
+using CipherLib.Ciphers;
+using CipherLib.Miscellaneous;
+using static CipherLib.Miscellaneous.Constants;
 
-namespace ControlAndData
+namespace CipherLib
 {
     public class CipherDataContainer
     {

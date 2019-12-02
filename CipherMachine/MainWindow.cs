@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ControlAndData;
-using ControlAndData.Ciphers;
-using static ControlAndData.Miscellaneous.Constants;
+using CipherLib;
+using CipherLib.Ciphers;
+using static CipherLib.Miscellaneous.Constants;
 
 
 namespace CipherMachine

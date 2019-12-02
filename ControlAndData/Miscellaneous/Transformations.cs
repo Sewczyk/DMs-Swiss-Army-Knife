@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ControlAndData.Miscellaneous
+namespace CipherLib.Miscellaneous
 {
     public static class Transformations
     {

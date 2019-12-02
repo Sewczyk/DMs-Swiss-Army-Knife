@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using static ControlAndData.Miscellaneous.Constants;
+using static CipherLib.Miscellaneous.Constants;
 
-namespace ControlAndData.Ciphers
+namespace CipherLib.Ciphers
 {
     public class NihilistCipher : ICipher
     {
@@ -20,7 +20,7 @@ namespace ControlAndData.Ciphers
         }
 
 
-        public void RunLogic()
+        public void RunLogic(string _input)
         {
             throw new NotImplementedException();
         }
