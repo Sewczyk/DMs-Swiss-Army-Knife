@@ -6,11 +6,11 @@ using static ControlAndData.Miscellaneous.Constants;
 
 namespace ControlAndData.Ciphers
 {
-    public class NihilistCipher : Cipher
+    public class NihilistCipher : ICipher
     {
         public string Keyword { get; set; }
 
-        public override string Name { get; }
+        public string Name { get;}
 
 
         public NihilistCipher(string _name, string _keyword)
@@ -20,14 +20,14 @@ namespace ControlAndData.Ciphers
         }
 
 
-        public override void RunLogic()
+        public void RunLogic()
         {
             throw new NotImplementedException();
         }
 
-        public override string OutputToListBox()
+        public string OutputToListBox()
         {
-            return Name + " | " + Keyword;
+            return $"{Name} | {Keyword}";
         }
 
     }

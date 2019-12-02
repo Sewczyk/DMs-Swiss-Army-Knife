@@ -8,23 +8,22 @@ using static ControlAndData.Miscellaneous.Constants;
 
 namespace ControlAndData
 {
-    public class Controller
+    public class CipherDataContainer
     {
         public bool HasCipheringOrderChanged { get; set; }
 
-        public List<string> AllCiphers { get; private set; }
-        public List<Cipher> CipheringOrder { get; private set; }
-        public Controller()
+        public List<string> AvilableCiphers { get; private set; }
+        public List<ICipher> CipheringOrder { get; set; }
+        public CipherDataContainer()
         {
             HasCipheringOrderChanged = false;
-            AllCiphers = new List<string>();
-            CipheringOrder = new List<Cipher>();
-            CaesarCipher caesarCipher = new CaesarCipher();
+            AvilableCiphers = new List<string>();
+            CipheringOrder = new List<ICipher>();
             InitializeListOfCiphers();
         }
 
 
-        public void AddNewNihilistPlayfairInstanceToCipheringOrder(string _name, string _keyword)
+        public void AddNihilistInstance(string _name, string _keyword)
         {
             CipheringOrder.Add(new NihilistCipher(_name, _keyword));
             HasCipheringOrderChanged = true;
@@ -33,13 +32,12 @@ namespace ControlAndData
         
         private void InitializeListOfCiphers()
         {
-            AllCiphers = new List<string>
+            AvilableCiphers = new List<string>
             {
                 CaesarCipherName,
                 NihilistCipherName,
                 BinaryTranslation,
                 PlayfairCipherName,
-                FutharkTranslation
             };
         }
 

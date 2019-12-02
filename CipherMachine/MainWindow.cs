@@ -23,7 +23,7 @@ namespace CipherMachine
         private string globalFont;
         private float globalFontSize = 2;
         private bool isChanged = false;
-        Controller ControllerAndData = new Controller();
+        private CipherDataContainer DataContainer = new CipherDataContainer();
 
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -49,11 +49,12 @@ namespace CipherMachine
             }
             textSource.Font = new Font(globalFont, globalFontSize);
             
-            foreach(string obj in ControllerAndData.AllCiphers)
+            foreach(string obj in DataContainer.AvilableCiphers)
             {
                 listBoxAvilableCiphers.Items.Add(obj);
             }
             listBoxAvilableCiphers.SelectedIndex = 0;
+
         }
 
 
@@ -174,14 +175,14 @@ namespace CipherMachine
         private Form FormFactory(string _input)
         {
             if (_input == NihilistCipherName)
-                return new FormNihilistPlayfair(ControllerAndData);
+                return new FormNihilistPlayfair(DataContainer);
             return null;
         }
 
         private void MainWindow_Activated(object sender, EventArgs e)
         {
             listBoxCipheringOrder.DataSource = null;
-            foreach (Cipher current in ControllerAndData.CipheringOrder)
+            foreach (ICipher current in DataContainer.CipheringOrder)
             {
                 listBoxCipheringOrder.Items.Add(current.OutputToListBox());
             }

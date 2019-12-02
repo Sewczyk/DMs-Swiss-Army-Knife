@@ -14,17 +14,17 @@ namespace CipherMachine
 {
     public partial class FormNihilistPlayfair : Form
     {
-        private Controller LocalController;
-        public FormNihilistPlayfair(Controller _controller)
+        private CipherDataContainer container;
+        public FormNihilistPlayfair(CipherDataContainer _controller)
         {
             InitializeComponent();
-            LocalController = _controller;
+            container = _controller;
             
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            LocalController.AddNewNihilistPlayfairInstanceToCipheringOrder(NihilistCipherName, textBoxKeyword.Text.ToString());
+            container.AddNihilistInstance(NihilistCipherName, textBoxKeyword.Text.ToString());
             Close();
         }
 
