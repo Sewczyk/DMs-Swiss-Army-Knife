@@ -25,7 +25,7 @@ namespace CipherLib
 
         public void AddNihilistInstance(string _name, string _keyword)
         {
-            CipheringOrder.Add(new NihilistCipher(_name, _keyword));
+            CipheringOrder.Add(new NihilistCipher(_keyword));
             HasCipheringOrderChanged = true;
 
         }

@@ -16,12 +16,10 @@ namespace CipherLib.Ciphers
 
         public string Name { get; }
 
-        public CaesarCipher(string _name, int _shift)
+        public CaesarCipher(int _shift)
         {
-            Name = _name;
+            Name = CaesarCipherName;
             Shift = _shift;
-            LettersToNumbers = new Dictionary<char, int>();
-            NumbersToLetters = new Dictionary<int, char>();
             prepareData();
         }
 

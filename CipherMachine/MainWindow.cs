@@ -9,22 +9,22 @@ using System.Windows.Forms;
 using CipherLib;
 using CipherLib.Ciphers;
 using static CipherLib.Miscellaneous.Constants;
+using static CipherLib.Miscellaneous.Transformations;
 
 
 namespace CipherMachine
 {
     public partial class MainWindow : Form
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
         private string globalFont;
         private float globalFontSize = 2;
         private bool isChanged = false;
         private CipherDataContainer DataContainer = new CipherDataContainer();
 
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -54,7 +54,6 @@ namespace CipherMachine
                 listBoxAvilableCiphers.Items.Add(obj);
             }
             listBoxAvilableCiphers.SelectedIndex = 0;
-
         }
 
 
@@ -181,11 +180,10 @@ namespace CipherMachine
 
         private void MainWindow_Activated(object sender, EventArgs e)
         {
+            //BUG, listbox not populating properly
             listBoxCipheringOrder.DataSource = null;
-            foreach (ICipher current in DataContainer.CipheringOrder)
-            {
-                listBoxCipheringOrder.Items.Add(current.OutputToListBox());
-            }
+            listBoxCipheringOrder.DataSource = DataContainer.CipheringOrder;
+
         }
 
         private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)

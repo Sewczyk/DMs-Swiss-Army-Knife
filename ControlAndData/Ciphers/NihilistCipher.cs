@@ -10,12 +10,12 @@ namespace CipherLib.Ciphers
     {
         public string Keyword { get; set; }
 
-        public string Name { get;}
+        public string Name { get; private set; }
 
 
-        public NihilistCipher(string _name, string _keyword)
+        public NihilistCipher(string _keyword)
         {
-            Name = _name;
+            Name = NihilistCipherName;
             Keyword = _keyword;
         }
 
