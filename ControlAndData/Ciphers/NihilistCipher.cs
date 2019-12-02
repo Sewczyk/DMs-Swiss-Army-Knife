@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using static ControlAndData.Miscellaneous.Constants;
+using static CipherLib.Miscellaneous.Constants;
 
-namespace ControlAndData.Ciphers
+namespace CipherLib.Ciphers
 {
-    public class NihilistCipher : Cipher
+    public class NihilistCipher : ICipher
     {
         public string Keyword { get; set; }
 
-        public override string Name { get; }
+        public string Name { get; private set; }
 
 
-        public NihilistCipher(string _name, string _keyword)
+        public NihilistCipher(string _keyword)
         {
-            Name = _name;
+            Name = NihilistCipherName;
             Keyword = _keyword;
         }
 
 
-        public override void RunLogic()
+        public void RunLogic(string _input)
         {
             throw new NotImplementedException();
         }
 
-        public override string OutputToListBox()
+        public string OutputToListBox()
         {
-            return Name + " | " + Keyword;
+            return $"{Name} | {Keyword}";
         }
 
     }

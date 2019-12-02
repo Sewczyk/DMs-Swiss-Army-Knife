@@ -6,25 +6,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ControlAndData;
-using ControlAndData.Ciphers;
-using static ControlAndData.Miscellaneous.Constants;
+using CipherLib;
+using CipherLib.Ciphers;
+using static CipherLib.Miscellaneous.Constants;
+using static CipherLib.Miscellaneous.Transformations;
 
 
 namespace CipherMachine
 {
     public partial class MainWindow : Form
     {
+        private string globalFont;
+        private float globalFontSize = 2;
+        private bool isChanged = false;
+        private CipherDataContainer DataContainer = new CipherDataContainer();
+
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        private string globalFont;
-        private float globalFontSize = 2;
-        private bool isChanged = false;
-        Controller ControllerAndData = new Controller();
-
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -49,7 +49,7 @@ namespace CipherMachine
             }
             textSource.Font = new Font(globalFont, globalFontSize);
             
-            foreach(string obj in ControllerAndData.AllCiphers)
+            foreach(string obj in DataContainer.AvilableCiphers)
             {
                 listBoxAvilableCiphers.Items.Add(obj);
             }
@@ -174,17 +174,18 @@ namespace CipherMachine
         private Form FormFactory(string _input)
         {
             if (_input == NihilistCipherName)
-                return new FormNihilistPlayfair(ControllerAndData);
+                return new FormNihilistPlayfair(DataContainer);
             return null;
         }
 
         private void MainWindow_Activated(object sender, EventArgs e)
         {
-            listBoxCipheringOrder.DataSource = null;
-            foreach (Cipher current in ControllerAndData.CipheringOrder)
+            listBoxCipheringOrder.Items.Clear();
+            foreach (ICipher current in DataContainer.CipheringOrder)
             {
                 listBoxCipheringOrder.Items.Add(current.OutputToListBox());
             }
+
         }
 
         private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)

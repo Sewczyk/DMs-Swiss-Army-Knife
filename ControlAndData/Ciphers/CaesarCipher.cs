@@ -2,34 +2,46 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static CipherLib.Miscellaneous.Constants;
 
 
-namespace ControlAndData.Ciphers
+namespace CipherLib.Ciphers
 {
-    public class CaesarCipher : Cipher
+    public class CaesarCipher : ICipher
     {
         public int Shift { get; private set; }
 
-        public override string Name => throw new NotImplementedException();
+        private Dictionary<char, int> LettersToNumbers;
+        private Dictionary<int, char> NumbersToLetters;
 
-        public CaesarCipher()
-        {
-            //do stuff;
-        }
+        public string Name { get; }
 
-        public CaesarCipher(string _name, int _shift)
+        public CaesarCipher(int _shift)
         {
+            Name = CaesarCipherName;
             Shift = _shift;
+            prepareData();
         }
 
-        public override void RunLogic()
+        public void RunLogic(string _input)
         {
-            throw new NotImplementedException();
+
         }
 
-        public override string OutputToListBox()
+        public string OutputToListBox()
         {
-            return Name + "," + Shift.ToString();
+            return $"{Name} | {Shift.ToString()}";
+        }
+
+        private void prepareData()
+        {
+            LettersToNumbers = new Dictionary<char, int>();
+            NumbersToLetters = new Dictionary<int, char>();
+            for (int i = 0; i < AlphabetWithPolishLetters.Length; i++)
+            {
+                LettersToNumbers.Add(AlphabetWithPolishLetters[i], i);
+                NumbersToLetters.Add(i, AlphabetWithPolishLetters[i]);
+            }
         }
     }
 }

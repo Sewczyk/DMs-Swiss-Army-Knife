@@ -83,9 +83,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ControlAndData\ControlAndData.csproj">
+    <ProjectReference Include="..\ControlAndData\CipherLib.csproj">
       <Project>{17447258-b8cd-49d1-a6ef-315f07630a09}</Project>
-      <Name>ControlAndData</Name>
+      <Name>CipherLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
