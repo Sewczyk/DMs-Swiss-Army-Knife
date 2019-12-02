@@ -180,9 +180,11 @@ namespace CipherMachine
 
         private void MainWindow_Activated(object sender, EventArgs e)
         {
-            //BUG, listbox not populating properly
-            listBoxCipheringOrder.DataSource = null;
-            listBoxCipheringOrder.DataSource = DataContainer.CipheringOrder;
+            listBoxCipheringOrder.Items.Clear();
+            foreach (ICipher current in DataContainer.CipheringOrder)
+            {
+                listBoxCipheringOrder.Items.Add(current.OutputToListBox());
+            }
 
         }
 
