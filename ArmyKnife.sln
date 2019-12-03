@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmyKnifeUI", "CipherMachin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CipherLib", "ControlAndData\CipherLib.csproj", "{17447258-B8CD-49D1-A6EF-315F07630A09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CipherLibUnitTests", "CipherLibUnitTests\CipherLibUnitTests.csproj", "{4D73ED61-9175-408E-9007-4734C30004DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{17447258-B8CD-49D1-A6EF-315F07630A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17447258-B8CD-49D1-A6EF-315F07630A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17447258-B8CD-49D1-A6EF-315F07630A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D73ED61-9175-408E-9007-4734C30004DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D73ED61-9175-408E-9007-4734C30004DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D73ED61-9175-408E-9007-4734C30004DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D73ED61-9175-408E-9007-4734C30004DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

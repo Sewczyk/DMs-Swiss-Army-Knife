@@ -7,7 +7,7 @@ using static CipherLib.Miscellaneous.Constants;
 
 namespace CipherLib.Ciphers
 {
-    public class CaesarCipher : ICipher
+    public class CaesarCipher 
     {
         public int Shift { get; private set; }
 
@@ -23,9 +23,19 @@ namespace CipherLib.Ciphers
             prepareData();
         }
 
-        public void RunLogic(string _input)
+        public string RunLogic(string _input)
         {
-
+            //string outputMessage;
+            int letterIntValue;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < _input.Length; i++)
+            {
+                letterIntValue = LettersToNumbers[_input[i]];
+                letterIntValue += Shift%(LettersToNumbers.Count/2);
+                sb.Append(NumbersToLetters[letterIntValue]);
+            }
+            //_input = sb.ToString();
+            return sb.ToString();
         }
 
         public string OutputToListBox()

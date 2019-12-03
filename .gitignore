@@ -8,3 +8,9 @@ CipherMachine/obj/
 ControlAndData/bin/
 
 ControlAndData/obj/
+
+packages/
+
+CipherLibUnitTests/bin/
+
+CipherLibUnitTests/obj/

@@ -20,9 +20,9 @@ namespace CipherLib.Ciphers
         }
 
 
-        public void RunLogic(string _input)
+        public string RunLogic(string _input)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public string OutputToListBox()
