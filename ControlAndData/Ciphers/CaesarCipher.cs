@@ -19,21 +19,41 @@ namespace CipherLib.Ciphers
         public CaesarCipher(int _shift)
         {
             Name = CaesarCipherName;
-            Shift = _shift;
-            prepareData();
+            Shift = _shift*2;
+            PrepareData();
         }
 
-        public void RunLogic(string _input)
+        public string RunLogic(string _input)
         {
-
+            //string outputMessage;
+            int letterIntValue;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < _input.Length; i++)
+            {
+                try 
+                {
+                    letterIntValue = LettersToNumbers[_input[i]];
+                    if (Shift < 0)
+                        Shift = NumbersToLetters.Count + Shift;
+                    letterIntValue += Shift;
+                    letterIntValue %= NumbersToLetters.Count;
+                    sb.Append(NumbersToLetters[letterIntValue]);
+            }
+                catch(KeyNotFoundException)
+                {
+                    sb.Append(_input[i]);
+                }
+            }
+            _input = sb.ToString();
+            return _input;
         }
 
         public string OutputToListBox()
         {
-            return $"{Name} | {Shift.ToString()}";
+            return $"{Name} | {Shift}";
         }
 
-        private void prepareData()
+        private void PrepareData()
         {
             LettersToNumbers = new Dictionary<char, int>();
             NumbersToLetters = new Dictionary<int, char>();
