@@ -14,19 +14,20 @@ namespace CipherLibUnitTests
     public class CaesarCipherUnitTests
     {
         [TestMethod]
-        [DataRow(1,"evqą")]
-        [DataRow(7,"jżvę")]
-        [DataRow(36,"evqą")]
-        [DataRow(-1,"ćtóż")] // fails in weird way, rest is ok, needs bulletproofing
-        public void CaesarCipherLogicTest(int shift, string expectedOutput)
+        [DataRow(1,"dupa","evqą")]
+        [DataRow(7, "dupa", "jżvę")]
+        [DataRow(36, "dupa", "evqą")]
+        [DataRow(-1, "dupa", "ćtóż")] // fails in weird way, rest is ok, needs bulletproofing
+        [DataRow(1, "dupa dupa", "evqą evqą")]
+        public void CaesarCipherLogicTest(int shift,string input, string expectedOutput)
         {
-            string inputString = "dupa";
             
             CaesarCipher cCipher = new CaesarCipher(shift);
-            string outputString = cCipher.RunLogic(inputString);
+            string outputString = cCipher.RunLogic(input);
 
             Assert.AreEqual(expectedOutput, outputString);
         }
+        
         [TestMethod]
         [DataRow(4)]
         [DataRow(1)]

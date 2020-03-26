@@ -54,6 +54,10 @@ namespace CipherMachine
                 listBoxAvilableCiphers.Items.Add(obj);
             }
             listBoxAvilableCiphers.SelectedIndex = 0;
+
+            CaesarCipher test = new CaesarCipher(3);
+            
+            Console.WriteLine(test.RunLogic("Zaza zaza").ToString());
         }
 
 

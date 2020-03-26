@@ -7,7 +7,7 @@ using static CipherLib.Miscellaneous.Constants;
 
 namespace CipherLib.Ciphers
 {
-    public class CaesarCipher 
+    public class CaesarCipher : ICipher
     {
         public int Shift { get; private set; }
 
@@ -19,8 +19,8 @@ namespace CipherLib.Ciphers
         public CaesarCipher(int _shift)
         {
             Name = CaesarCipherName;
-            Shift = _shift;
-            prepareData();
+            Shift = _shift*2;
+            PrepareData();
         }
 
         public string RunLogic(string _input)
@@ -30,20 +30,30 @@ namespace CipherLib.Ciphers
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < _input.Length; i++)
             {
-                letterIntValue = LettersToNumbers[_input[i]];
-                letterIntValue += Shift%(LettersToNumbers.Count/2);
-                sb.Append(NumbersToLetters[letterIntValue]);
+                try 
+                {
+                    letterIntValue = LettersToNumbers[_input[i]];
+                    if (Shift < 0)
+                        Shift = NumbersToLetters.Count + Shift;
+                    letterIntValue += Shift;
+                    letterIntValue %= NumbersToLetters.Count;
+                    sb.Append(NumbersToLetters[letterIntValue]);
             }
-            //_input = sb.ToString();
-            return sb.ToString();
+                catch(KeyNotFoundException)
+                {
+                    sb.Append(_input[i]);
+                }
+            }
+            _input = sb.ToString();
+            return _input;
         }
 
         public string OutputToListBox()
         {
-            return $"{Name} | {Shift.ToString()}";
+            return $"{Name} | {Shift}";
         }
 
-        private void prepareData()
+        private void PrepareData()
         {
             LettersToNumbers = new Dictionary<char, int>();
             NumbersToLetters = new Dictionary<int, char>();

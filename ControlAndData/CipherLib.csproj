@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ciphers\BinaryConversion.cs" />
     <Compile Include="Ciphers\CaesarCipher.cs" />
     <Compile Include="Ciphers\ICipher.cs" />
     <Compile Include="Ciphers\NihilistCipher.cs" />
