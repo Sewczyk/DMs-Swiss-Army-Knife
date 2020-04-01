@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CipherLib;
 using CipherLib.Ciphers;
+using ControlAndData.Ciphers;
 using static CipherLib.Miscellaneous.Constants;
 using static CipherLib.Miscellaneous.Transformations;
 
@@ -56,6 +57,7 @@ namespace CipherMachine
             listBoxAvilableCiphers.SelectedIndex = 0;
 
             CaesarCipher test = new CaesarCipher(3);
+            PlayfairCipher playfairCipher = new PlayfairCipher("test");
             
             Console.WriteLine(test.RunLogic("Zaza zaza").ToString());
         }
