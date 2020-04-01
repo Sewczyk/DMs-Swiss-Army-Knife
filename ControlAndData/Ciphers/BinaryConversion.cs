@@ -30,7 +30,9 @@ namespace ControlAndData.Ciphers
             StringBuilder sb = new StringBuilder();
             for(int i = 0; i < input.Length; i++)
             {
-                sb.Append(Convert.ToString((int)input[i], 2).PadLeft(8, '0'));
+                sb.Append(Convert.ToString((int)input[i], 2).PadLeft(9, '0'));
+                if(i!=input.Length-1)
+                    sb.Append(' ');
             }
             input = sb.ToString();
             return input;
